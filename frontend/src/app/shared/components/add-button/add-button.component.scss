@@ -1,0 +1,23 @@
+@import '../../../../variables.scss';
+
+.button_container{
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+        top: 90px;
+        right: 3%;
+        z-index: 99;
+
+    
+    button{
+        background-color:$color-cian-electrico;
+        color: $color-azul-cobalto;
+        padding: 5px 12px;
+        border: none;
+        border-radius: 0;
+        font-size: $font-size-gral;
+        box-shadow: $color-cian-electrico 0 0 5px;
+        cursor: pointer;
+        
+    }
+}

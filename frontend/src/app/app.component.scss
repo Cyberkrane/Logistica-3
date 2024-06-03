@@ -1,0 +1,77 @@
+@import "../variables.scss";
+
+.container > * {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+
+    .container {
+        min-height: 98vh;
+        padding: 10px;
+        display: grid;
+        gap: 10px;
+        grid-template:
+            "header" 70px
+            "main" auto
+            "footer" 4%;
+
+        header {
+            grid-area: header;
+        }
+
+        main {
+            min-height: 70vh;
+            margin: 0 auto;
+            grid-area: main;
+            background-color: $color-azul-cobalto;
+            color: $color-blanco-plateado;
+            justify-content: center;
+            align-items: center;
+            overflow-y: scroll;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: $color-gris-grafito;
+            color: $color-blanco-plateado;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .grid_container {
+        grid-template:
+            "header header" 70px
+            "main main" auto
+            "footer footer" 60px/
+            200px auto;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .grid_container {
+        grid-template:
+            "header" 80px
+            "main" auto
+            "footer" 60px /
+            auto;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .grid_container {
+        max-width: 1440px;
+        margin: 0 auto;
+        grid-template:
+            "header" 100px
+            "main" auto
+            "footer" 60px /
+            auto;
+    }
+}

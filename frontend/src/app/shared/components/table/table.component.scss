@@ -1,0 +1,57 @@
+@import "../../../../variables.scss";
+
+h2 {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    background-color: $color-gris-grafito;
+    color: $color-cian-sombra;
+    border-top: 1px solid $color-cian-electrico;
+}
+
+.table_container {
+    width: 90%;
+    height: 75vh;
+    overflow-y: scroll;
+    margin: 0 auto;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    table {
+        thead {
+            tr {
+                td {
+                    background-color: $color-gris-grafito;
+                    color: $color-cian-sombra;
+                    padding: 5px 20px;
+                    box-shadow: $color-cian-electrico 0px 1px 3px;
+                    position: sticky;
+                    top: 0;
+                    z-index: 99;
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    text-align: left;
+                    padding: 15px 30px;
+                    border-bottom: 1px solid $color-cian-sombra;
+                    p {
+                        display: flex;
+                    }
+                }
+            }
+        }
+
+        .btn_acctions {
+            p {
+                display: flex;
+                gap: 20px;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,111 @@
+
+.alert-content{ 
+    position: fixed;
+    margin: 75% auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   
+
+.alert {
+    border-radius: 5px;
+    position: absolute;
+    width: fit-content;
+    min-height: 100px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(var(--gradient-angle, 45deg), #48ff00, #ffffff70, #fdfcfc, #ffffff70, #fdfcfc, #07f4fc);
+
+    animation: rotate-gradient 5s infinite linear;
+
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    h2 {
+        width: fit-content;
+        position: relative;
+        padding: 33px;
+        z-index: 11;
+        font-size: 1.2em;
+        border-radius: 5px;
+        background-color: rgb(0, 0, 0);
+
+
+        &.alert_info {
+            color: rgb(4, 221, 250);
+            box-shadow:  rgb(69, 225, 253) 0 0 15px;
+        }
+        &.alert_success {
+            color: rgb(5, 253, 17);
+            box-shadow:  rgb(127, 253, 69) 0 0 15px;
+        }
+        &.alert_warning {
+            color: rgb(223, 247, 9);
+            box-shadow:  rgb(235, 253, 69) 0 0 15px;
+        }
+        &.alert_danger {
+            color: rgb(247, 10, 10);
+            box-shadow:  rgb(250, 2, 2) 0 0 5px, rgb(253, 69, 69) 0 0 15px;
+        }
+        &.alert_orange {
+            color: rgb(252, 215, 5);
+            box-shadow:  rgb(253, 179, 69) 0 0 15px;
+        }
+        &.alert_cyber {
+            color: rgb(247, 239, 10);
+            text-shadow: rgb(11, 137, 247) 1px 1px 2px;
+            box-shadow:
+                inset aliceblue 0 0 5px,
+                rgb(2, 135, 251) 2px 2px 5px,
+                rgb(251, 2, 230) -2px -2px 3px;
+        }
+    }
+}
+}
+
+.alerta {
+    max-width: 50%;
+    padding: 5px;
+    text-align: center; 
+}
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes rotate-gradient {
+    to {
+        --gradient-angle: 360deg;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .alert-content {
+      margin: 95% auto;
+    }
+  }
+  
+  @media screen and (min-width: 769px) {
+    .alert-content {
+      margin: 75% auto;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .alert-content {
+      margin: 45% auto;
+    }
+  }
+  
+  @media screen and (min-width: 1440px) {
+    .alert-content {
+      margin: 30% auto;
+    }
+  }

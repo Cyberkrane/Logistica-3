@@ -1,0 +1,7 @@
+<div id="confirmation-dialog" class="modal" *ngIf="confirmationDialog">
+    <div class="modal-content">
+      <p>Estas seguro que quieres borrar la tarjeta N°: {{idProduct}}?</p>
+      <button id="confirm-delete" (click)="confirmo()">Si</button>
+      <button id="cancel-delete" (click)="cancelo()">No</button>
+    </div>
+  </div>

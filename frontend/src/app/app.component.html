@@ -1,0 +1,15 @@
+<div class="container">
+    <header>
+        <app-header></app-header>
+    </header>
+    
+    <main>
+        <app-alerts [alertType]="alertType" [alertState]="alertState" [message]="message"></app-alerts> 
+    <router-outlet></router-outlet>
+    
+    </main>
+    
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+</div>

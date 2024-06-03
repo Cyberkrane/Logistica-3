@@ -1,0 +1,35 @@
+@import "./variables.scss";
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $color-azul-cobalto;
+    color: $color-blanco-plateado;
+    font-size: $font-size-gral;
+    font-family: $font-family-gral;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    button {
+        // background-color: $color-azul-cobalto;
+        background-color: rgba(0, 0, 255, 0.007);
+        color: $color-blanco-plateado;
+        padding: 5px 8px;
+        border: none;
+        border-radius: 8px;
+        font-size: $font-size-gral;
+        box-shadow: $color-cian-sombra 0 0 5px;
+    }
+
+   
+}
+
+// Estilo Psicho

@@ -1,0 +1,59 @@
+<div class="form_container">
+  <h2>{{ title }}</h2>
+
+  <form [formGroup]="product_form" (ngSubmit)="onSubmit()">
+
+    <div class="form-field_container">
+      <input type="text" formControlName="id" placeholder="ingresa un id" />
+      <span *ngIf="isValidField('id')">{{ getFieldError('id') }}</span>
+    </div>
+
+    <div class="form-field_container">
+      <input type="text" formControlName="name" placeholder="ingresa un nombre" />
+      <span *ngIf="isValidField('name')">{{ getFieldError('name') }}</span>
+    </div>
+
+    <div class="form-field_container">
+      <input type="text" formControlName="benefits" placeholder="Ventajas" />
+      <span *ngIf="isValidField('benefits')">{{ getFieldError('benefits') }}</span>
+    </div>
+
+    <div class="form-field_container">
+       <input type="text" formControlName="IdealFor" placeholder="Ideal para" />
+      <span *ngIf="isValidField('IdealFor')">{{ getFieldError('IdealFor') }}</span>
+    </div>
+
+    <div class="form-field_container">
+      <input type="number" formControlName="price" placeholder="Precio" />
+      <span *ngIf="isValidField('price')">{{ getFieldError('price') }}</span>
+    </div>
+
+    <div class="form-field_container">
+      <input type="text" formControlName="stock" placeholder="ingresa la cantidad"/>
+      <span *ngIf="isValidField('stock')">{{ getFieldError('stock') }}</span>
+    </div>
+
+  </form>
+
+  <div class="buttons_container">
+
+    <button
+      type="submit"
+      *ngIf="title == 'Add Product'"
+      [disabled]="this.product_form.invalid"
+      (click)="saveProduct()"
+    >
+      save
+    </button>
+
+    <button
+      type="submit"
+      *ngIf="title == 'Edit Product'"
+      [disabled]="this.product_form.invalid"
+      (click)="editProduct(product_form.value.id)"
+    >
+      update
+    </button>
+    <app-home-button></app-home-button>
+  </div>
+</div>
