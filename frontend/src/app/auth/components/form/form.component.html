@@ -1,65 +1,106 @@
 <div class="form_container">
-    <h2>{{ title }}</h2>
-  
-     <form [formGroup]="auth_form" (ngSubmit)="onSubmit()">
-  
+  <h2>{{ title }}</h2>
+
+  <form [formGroup]="auth_form" (ngSubmit)="onSubmit()">
+    <div class="registering" *ngIf="title === 'Register'">
       <div class="form-field_container">
         <input type="text" formControlName="id" placeholder="ingresa un id" />
-        <span *ngIf="isValidField('id')">{{ getFieldError('id') }}</span>
-      </div>
-  
-      <div class="form-field_container">
-        <input type="text" formControlName="firt_name" placeholder="ingresa tu nombre" />
-        <span *ngIf="isValidField('firt_name')">{{ getFieldError('firt_name') }}</span>
-      </div>
-  
-    <div class="form-field_container">
-        <input type="text" formControlName="last_name" placeholder="ingresa tu apellido" />
-        <span *ngIf="isValidField('last_name')">{{ getFieldError('last_name') }}</span>
-      </div>
-  
-    <div class="form-field_container">
-         <input type="text" formControlName="userName" placeholder="nombre de usuario" />
-        <span *ngIf="isValidField('userName')">{{ getFieldError('userName') }}</span>
-      </div>
-  
-      <div class="form-field_container">
-        <input type="text" formControlName="password" placeholder="ingresa tu clave" />
-        <span *ngIf="isValidField('password')">{{ getFieldError('password') }}</span>
+        <span *ngIf="title === 'Register' && isValidField('id')">{{
+          getFieldError("id")
+        }}</span>
       </div>
 
       <div class="form-field_container">
-        <input type="text" formControlName="confirm_password" placeholder="confirmar la clave" />
-        <span *ngIf="isValidField('confirm_password')">{{ getFieldError('confirm_password') }}</span>
+        <input
+          type="text"
+          formControlName="firt_name"
+          placeholder="ingresa tu nombre"
+        />
+        <span *ngIf="isValidField('firt_name')">{{
+          getFieldError("firt_name")
+        }}</span>
       </div>
-  
+
       <div class="form-field_container">
-        <input type="text" formControlName="roleID" placeholder="ingresa tu rol"/>
-        <span *ngIf="isValidField('roleID')">{{ getFieldError('roleID') }}</span>
+        <input
+          type="text"
+          formControlName="last_name"
+          placeholder="ingresa tu apellido"
+        />
+        <span *ngIf="isValidField('last_name')">{{
+          getFieldError("last_name")
+        }}</span>
       </div>
-  
-    </form> 
-  
-    <div class="buttons_container">
-  
-      <button
-        type="submit"
-        *ngIf="title == 'register'"
-        [disabled]="this.auth_form.invalid"
-        (click)="saveUser()"
-      >
-        save
-      </button>
-  
-      <button
-        type="submit"
-        *ngIf="title == 'Login'"
-        [disabled]="this.auth_form.invalid"
-        (click)="editUser(auth_form.value.id)"
-      >
-        send
-      </button>
-      
     </div>
+
+    <div class="form-field_container">
+      <input
+        type="text"
+        formControlName="userName"
+        placeholder="nombre de usuario"
+      />
+      <span *ngIf="isValidField('userName')">{{
+        getFieldError("userName")
+      }}</span>
+    </div>
+
+    <div class="form-field_container">
+      <input
+        type="text"
+        formControlName="password"
+        placeholder="ingresa tu clave"
+      />
+      <span *ngIf="isValidField('password')">{{
+        getFieldError("password")
+      }}</span>
+    </div>
+
+    <div class="registering" *ngIf="title === 'Register'">
+      <div class="form-field_container">
+        <input
+          type="text"
+          formControlName="confirm_password"
+          placeholder="confirmar la clave"
+        />
+        <span *ngIf="isValidField('confirm_password')">{{
+          getFieldError("confirm_password")
+        }}</span>
+      </div>
+
+      <div class="form-field_container">
+        <input
+          type="text"
+          formControlName="roleID"
+          placeholder="ingresa tu rol"
+        />
+        <span *ngIf="isValidField('roleID')">{{
+          getFieldError("roleID")
+        }}</span>
+      </div>
+    </div>
+  </form>
+
+  <div class="buttons_container">
+    <button
+      type="submit"
+      *ngIf="title == 'Register'"
+      [disabled]="this.auth_form.invalid"
+      (click)="saveUser()"
+    >
+      save
+    </button>
+
+    <button
+      type="submit"
+      *ngIf="title == 'Login'"
+      [disabled]="loginFieldsValid(this.auth_form.controls['userName'].value, this.auth_form.controls['password'].value )"
+      (click)="loginUser()"
+    >
+      send
+    </button>
+
+    <button routerLink="/login/register" *ngIf="title == 'Login'">
+      i've not an account
+    </button>
   </div>
-  
+</div>
